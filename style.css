@@ -1,0 +1,169 @@
+body {
+    background-color: #dddddd;
+    font-family: 'Montserrat', sans-serif;
+}
+.container {
+    max-width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container.onScroll {
+    padding-top: 150px;
+}
+header {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: 1 1 100%;
+    order:0;
+    box-shadow: 2px 0px 14px rgba(0,0,0,.4);
+    transition:all 100ms ease-in-out;
+}
+header a {
+    flex: 0 1 100px;
+}
+.informacion {
+    flex: 3 1 0px;
+    order:1;
+    padding: 1rem;
+}   
+.izquierda {
+    flex: 1 1 0px;
+    order: 0;
+    padding: 1rem;
+}
+.izquierda ul, .derecha ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.izquierda ul li div, .derecha ul li div {
+    height: 150px;
+    box-shadow: 1px 4px 15px rgba(0,0,0,.3);
+}
+.izquierda ul li, .derecha ul li {
+    margin-bottom: 25px;
+}
+.derecha {
+    flex: 1 1 0px;
+    order:2;
+    padding: 1rem;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+header nav ul li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    margin: 0 .5rem;
+    color:#000000;
+    transition: all 200ms ease-in-out;
+}
+header nav ul li a:hover {
+    background-color: #000000;
+    transition: all 100ms ease-in-out;
+    color: #ffffff;
+}
+footer {
+    order: 3;
+    background-color: #000000;
+    color: #ffffff;
+    position: fixed;
+    top: calc(100% - 50px);
+    left: 10%;
+    bottom: 0px;
+    width: 80%;
+    right: 10%;
+    text-align: center;
+    padding-top: 15px;
+}
+footer p {
+    text-align: center;
+}
+.headerFixedScroll {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 78%;
+    right: 10%;
+    background: #ffffff;
+    transition:all 300ms ease-in-out;
+}
+@media all and (max-width:1024px) {
+    .container {
+        max-width: 90%;
+    }
+    .headerFixedScroll {
+        left: 6%;
+        width: 85%;
+        right: 6%;
+    }
+    footer {
+        left: 6%;
+        width: 88%;
+        right: 6%;
+    }
+}
+@media all and (max-width: 920px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .informacion, .izquierda, .derecha {
+        flex: 1 1 100%;
+    }
+    .informacion {
+        order: 0;
+    }
+    .izquierda {
+        order: 1;
+        flex: 1 1 0px;
+    }
+    .derecha {
+        order: 2;
+        flex: 1 1 0px;
+    }
+}
+@media all and (max-width: 800px) {
+    .container {
+        max-width: 100%;
+    }
+    .headerFixedScroll {
+        left: 0;
+        width: 96%;
+        right: 0;
+    }
+    footer {
+        left: 0;
+        width: 100%;
+        right: 0;
+    }
+}
+@media all and (max-width: 700px) {
+    .container header nav ul {
+        flex-direction: column;
+    }
+    header {
+        padding: 1rem 0 0 0;
+        align-items: stretch;
+    }
+    header nav ul li a {
+        margin: 0;
+    }
+    .headerFixedScroll {
+        width: 100%;
+    }
+}
+@media all and (max-width: 500px) {
+    .izquierda, .derecha {
+        flex: 1 1 100%;
+    }
+}
